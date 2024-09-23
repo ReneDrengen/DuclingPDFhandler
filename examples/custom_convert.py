@@ -6,8 +6,9 @@ from typing import Iterable
 
 from docling.backend.docling_parse_backend import DoclingParseDocumentBackend
 from docling.backend.pypdfium2_backend import PyPdfiumDocumentBackend
-from docling.datamodel.base_models import ConversionStatus, PipelineOptions
+from docling.datamodel.base_models import ConversionStatus
 from docling.datamodel.document import ConversionResult, DocumentConversionInput
+from docling.datamodel.pipeline_options import PipelineOptions
 from docling.document_converter import DocumentConverter
 
 _log = logging.getLogger(__name__)
@@ -82,9 +83,9 @@ def main():
     # PyPdfium with OCR
     # -----------------
     # pipeline_options = PipelineOptions()
-    # pipeline_options.do_ocr=False
+    # pipeline_options.do_ocr=True
     # pipeline_options.do_table_structure=True
-    # pipeline_options.table_structure_options.do_cell_matching = True
+    # pipeline_options.table_structure_options.do_cell_matching = False
 
     # doc_converter = DocumentConverter(
     #     pipeline_options=pipeline_options,
